@@ -4,4 +4,20 @@
 
 <br>
 
+<h2>Event list:</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Date</th>
+  </tr>
+  <% @user.events.each do |event| %>
+    <tr>
+      <th><%= event.name %></th>
+      <th><%= event.description %></th>
+      <th><%= event.date %></th>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'Back', users_path %>

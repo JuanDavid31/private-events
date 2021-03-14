@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :events
   root :to => 'users#index'
 
   resources :users, only: [:index, :show, :destroy]

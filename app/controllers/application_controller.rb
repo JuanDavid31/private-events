@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 
   helper_method :user_signed_in?
+  helper_method :current_user
   helper_method :current_user_name
 
   def save_user_session(user)
@@ -8,11 +9,12 @@ class ApplicationController < ActionController::Base
   end
 
   def user_signed_in?
-    current_user
+    session[:user_id]
   end
 
   def current_user
-    session[:user_id]
+    user_id = session[:user_id]
+    User.find user_id
   end
 
   def current_user_name

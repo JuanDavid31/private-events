@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1>Previous events</h1>
 
 <table>
   <thead>
@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% Event.past.each do |event| %>
       <tr>
         <td><%= event.id %></td>
         <td><%= event.description %></td>
@@ -23,5 +23,27 @@
 </table>
 
 <br>
+
+<h1>Upcoming events</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% Event.upcoming.each do |event| %>
+    <tr>
+      <td><%= event.id %></td>
+      <td><%= event.description %></td>
+      <td><%= link_to 'Show', event %></td>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'New Event', new_event_path %>

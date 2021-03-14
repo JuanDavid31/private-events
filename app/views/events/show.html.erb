@@ -2,5 +2,10 @@
 
 <label>Description: <%= @event.description %></label>
 <label>Creator: <%= @event.user.name %></label>
+<h2>Attendees</h2>
+<% @event.attendees.each do |attendee| %>
+  <label><%= attendee.name %></label>
+<% end %>
 
+<br>
 <%= link_to 'Back', events_path %>

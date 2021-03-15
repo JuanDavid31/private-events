@@ -11,7 +11,14 @@
 <br>
 
 <h2>Invite some people!</h2>
-
+<table>
+  <% @possible_attendees.each do |attendee| %>
+    <tr>
+      <th><%= attendee.name %></th>
+      <th><%= link_to 'Invite', invite_path(@event, attendee), method: :post %></th>
+    </tr>
+  <% end %>
+</table>
 
 <br>
 

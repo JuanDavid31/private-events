@@ -3,7 +3,6 @@ class EventsController < ApplicationController
   before_action :authorize, only: %i[new]
   helper_method :invite_path
 
-
   def invite_path(event, new_attendee)
     "/events/#{event.id}/invite?new_attendee=#{new_attendee.id}"
   end

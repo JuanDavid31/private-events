@@ -75,9 +75,9 @@ class EventsController < ApplicationController
   end
 
   def authorize
-    unless user_signed_in?
-      flash[:error] = 'Login before creating an Event'
-      redirect_to root_url
-    end
+    return unless user_signed_in?
+
+    flash[:error] = 'Login before creating an Event'
+    redirect_to root_url
   end
 end

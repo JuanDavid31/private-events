@@ -6,9 +6,14 @@ class UserTest < ActiveSupport::TestCase
     assert user.valid?, 'User should be valid'
   end
 
-  test 'user name' do
+  test 'user name should be valid' do
     user = users(:two)
     assert_not user.valid?, 'Name should have more 4 or more characters'
+  end
+
+  test 'user name should be unique' do
+    user = User.new name: 'Juan'
+    assert_not user.valid?, 'User name should be unique'
   end
 
   test 'user is not valid' do

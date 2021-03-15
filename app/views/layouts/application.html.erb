@@ -15,7 +15,8 @@
       <%= link_to 'Sign Out', '/sign_out', { method: :delete }%>
       <label> Current user: <%= current_user_name  %></label>
     <% else %>
-      <%= link_to 'Sign In', '/sign_in' %>
+      <%= link_to 'Sign In', '/sign_in' %> |
+      <%= link_to 'Sign Up', '/sign_up' %>
     <% end %>
 
 

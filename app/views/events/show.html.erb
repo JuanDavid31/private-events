@@ -2,10 +2,16 @@
 
 <label>Description: <%= @event.description %></label>
 <label>Creator: <%= @event.user.name %></label>
+<label>Date: <%= @event.date %></label>
 <h2>Attendees</h2>
 <% @event.attendees.each do |attendee| %>
   <label><%= attendee.name %></label>
 <% end %>
+
+<br>
+
+<h2>Invite some people!</h2>
+
 
 <br>
 

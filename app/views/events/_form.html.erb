@@ -10,9 +10,13 @@
     </div>
   <% end %>
 
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
   <%= form.label :description %>
   <%= form.text_field :description %>
-
+  <br>
+  <%= form.datetime_field :date %>
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -25,7 +25,7 @@ class AuthenticationsTest < ApplicationSystemTestCase
     fill_in 'name', with: 'Juan'
     click_button(value: 'Sign In')
     click_on 'Sign Out'
-    assert_text 'Sign out succesfully'
+    assert_text 'Sign out successfully'
   end
 
 end

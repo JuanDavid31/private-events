@@ -1,4 +1,4 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class EventsManagementsTest < ApplicationSystemTestCase
   test 'Create event' do
@@ -20,6 +20,7 @@ class EventsManagementsTest < ApplicationSystemTestCase
   end
 
   private
+
   def sign_in
     visit '/sign_in'
     fill_in 'name', with: 'Juan'

@@ -27,5 +27,4 @@ class AuthenticationsTest < ApplicationSystemTestCase
     click_on 'Sign Out'
     assert_text 'Sign out successfully'
   end
-
 end

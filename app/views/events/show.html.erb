@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<label>Description: <%= @event.description %></label>
+<label>Creator: <%= @event.user.name %></label>
+<label>Date: <%= @event.date %></label>
+<h2>Attendees</h2>
+<% @event.attendees.each do |attendee| %>
+  <label><%= attendee.name %></label>
+<% end %>
+
+<br>
+
+<h2>Invite some people!</h2>
+<table>
+  <% @possible_attendees.each do |attendee| %>
+    <tr>
+      <th><%= attendee.name %></th>
+      <th><%= link_to 'Invite', invite_path(@event, attendee), method: :post %></th>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to 'Back', events_path %>

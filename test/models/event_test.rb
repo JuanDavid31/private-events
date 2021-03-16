@@ -14,7 +14,7 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test 'past scope' do
-    assert_equal 2, Event.past.length, 'There should be only 1 past event'
+    assert_equal 2, Event.past.length, 'There should be only 2 past event'
   end
 
   test 'upcoming scope' do

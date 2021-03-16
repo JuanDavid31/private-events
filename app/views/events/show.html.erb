@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <label>Description: <%= @event.description %></label>
-<label>Creator: <%= @event.user.name %></label>
+<label>Creator: <%= @event.creator.name %></label>
 <label>Date: <%= @event.date %></label>
 <h2>Attendees</h2>
 <% @event.attendees.each do |attendee| %>

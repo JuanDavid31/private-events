@@ -1,0 +1,20 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name:
+  description:
+  creator_id: 1
+  date: <%= DateTime.now - 1.days %>
+
+two:
+  name: MyString
+  description:
+  creator_id: 1
+  date: <%= DateTime.now - 2.days %>
+
+three:
+  name:
+  description: MyText
+  creator_id: 1
+  date: <%= DateTime.now + 1.days %>

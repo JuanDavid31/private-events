@@ -1,4 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<label>Name: <%= @user.name %></label>
+
+<br>
+
+<h2>Event list:</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Date</th>
+  </tr>
+  <% @user.events.each do |event| %>
+    <tr>
+      <th><%= event.name %></th>
+      <th><%= event.description %></th>
+      <th><%= event.date %></th>
+    </tr>
+  <% end %>
+</table>
+<h2>Previously attended events</h2>
+<% @prev_events.each do |event| %>
+  <label><%= event.name %></label>
+<% end %>
+
+<br>
+
+<h2>Upcoming events</h2>
+<% @upcoming_events.each do |event| %>
+  <label><%= event.name %></label>
+<% end %>
+
+<% if current_user_name == @user.name %>
+  <%= link_to 'New', new_event_path %> |
+<% end %>
 <%= link_to 'Back', users_path %>

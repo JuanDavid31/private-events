@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :user, foreign_key: :creator_id
+  belongs_to :creator, foreign_key: :creator_id, class_name: 'User'
   validates :name, :description, :date, presence: true
   has_and_belongs_to_many :attendees, join_table: 'users_events', class_name: 'User'
 
